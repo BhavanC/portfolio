@@ -275,3 +275,166 @@
 </html>
 
 /*---------------------------------------------------------------------------------------------FIRST PAGE OVER-------------------------------------------------------------------------------------------*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Projects</title>
+    <link href__="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+        
+        /* ===== PROJECT STYLES ===== */
+        .project {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 3rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .project {
+                flex-direction: row;
+                gap: 4rem;
+            }
+            
+            .project.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+        
+        .project-image {
+            width: 100%;
+            flex: 1;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .project-info {
+            width: 100%;
+            flex: 1;
+        }
+        
+        .project-info h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .project-info p {
+            color: #666;
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+        
+        .project-info .publication {
+            font-style: italic;
+            color: #888;
+        }
+        
+        .learn-more {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 50px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+        }
+        
+        .learn-more:hover {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project {
+                padding: 2rem 0;
+            }
+            
+            .project-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Past Projects</h1>
+        
+        <!-- ===== PROJECT 1 - EDIT HERE ===== -->
+        <div class="project">
+            <div class="project-image">
+                <!-- Replace with your image URL -->
+                <img src="YOUR_PROJECT_1_IMAGE_URL_HERE" alt="Adaptive Cruise Control">
+            </div>
+            <div class="project-info">
+                <h3>Adaptive Cruise Control with Sensor fusion.</h3>
+                <p>Modelled, tested and validated the control system in a self-created virtual environment with the implementation of sensor fusion, lane detection and object detection.</p>
+                <p class="publication">Publication: EAI</p>
+                <a href__="#" class="learn-more">LEARN MORE</a>
+            </div>
+        </div>
+        
+        <!-- ===== PROJECT 2 - EDIT HERE ===== -->
+        <div class="project reverse">
+            <div class="project-image">
+                <!-- Replace with your image URL -->
+                <img src="YOUR_PROJECT_2_IMAGE_URL_HERE" alt="Field Oriented Control">
+            </div>
+            <div class="project-info">
+                <h3>Field Oriented Control of PMSM using RL & ANN.</h3>
+                <p>Improved the response of FOC in a PMSM by using Reinforcement Learning as a controller. RL was trained with various specifications, like neurons and reward functions.</p>
+                <p class="publication">Publication: IEEE</p>
+            </div>
+        </div>
+        
+        <!-- ===== ADD MORE PROJECTS BY COPYING THE BLOCK ABOVE ===== -->
+        
+    </div>
+</body>
+</html>
