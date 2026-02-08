@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Control Systems Engineer</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -129,32 +127,80 @@
             background: rgba(255,255,255,0.2);
         }
 
-        .scroll-indicator {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 2rem;
+        /* PROJECTS */
+        #projects {
+            background: white;
+            padding: 5rem 1.5rem;
         }
 
-        .scroll-indicator div {
-            width: 24px;
-            height: 40px;
-            border: 2px solid rgba(255,255,255,0.3);
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-container h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .project {
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        @media (min-width: 1024px) {
+            .project {
+                flex-direction: row;
+                align-items: center;
+                gap: 4rem;
+            }
+
+            .project.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .project-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .project-info h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .publication {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 2rem;
             border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            padding-top: 8px;
+            border: 1px solid #1a1a1a;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: 0.3s;
         }
 
-        .scroll-indicator span {
-            width: 6px;
-            height: 6px;
-            background: rgba(255,255,255,0.6);
-            border-radius: 50%;
-            animation: scroll 1.5s infinite;
-        }
-
-        @keyframes scroll {
-            50% { transform: translateY(8px); }
+        .learn-more:hover {
+            background: #1a1a1a;
+            color: white;
         }
 
         /* ABOUT */
@@ -210,73 +256,6 @@
             transform: translateY(-2px);
         }
 
-        /* PROJECTS */
-        #projects {
-            background: white;
-            padding: 5rem 1.5rem;
-        }
-
-        .project-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-container h2 {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 3rem;
-        }
-
-        .project {
-            padding: 4rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        @media (min-width: 1024px) {
-            .project {
-                flex-direction: row;
-                align-items: center;
-                gap: 4rem;
-            }
-
-            .project.reverse { flex-direction: row-reverse; }
-        }
-
-        .project-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .project-info h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-info p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        .learn-more {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            border: 1px solid #1a1a1a;
-            text-decoration: none;
-            color: #1a1a1a;
-            transition: 0.3s;
-        }
-
-        .learn-more:hover {
-            background: #1a1a1a;
-            color: white;
-        }
-
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .about-card { padding: 3rem 2rem; }
@@ -298,8 +277,8 @@
             <img src="Screenshot 2024-02-08 220324.png" alt="Profile">
         </div>
         <nav>
-            <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#about">About</a>
             <a href="https://www.linkedin.com/in/bhavan-chithambaram-5747651ab" target="_blank">LinkedIn</a>
         </nav>
     </header>
@@ -311,16 +290,63 @@
                 Master's student with expertise in Model-Based Design and Systems Engineering,
                 developing and validating control algorithms and performing virtual simulations.
             </p>
-            <a href="#projects" class="cta-button">
-                View My Work ↓
-            </a>
+            <a href="#projects" class="cta-button">View My Work ↓</a>
         </div>
     </main>
-
-    <div class="scroll-indicator">
-        <div><span></span></div>
-    </div>
 </div>
+
+<section id="projects">
+    <div class="project-container">
+        <h2>Past Projects</h2>
+
+        <div class="project">
+            <div class="project-image">
+                <img src="https://placehold.co/600x400" alt="">
+            </div>
+            <div class="project-info">
+                <h3>Adaptive Cruise Control with Sensor Fusion</h3>
+                <p>Modelled, tested and validated the control system in a self-created virtual environment.</p>
+                <p class="publication">Publication: EAI</p>
+                <a href="reports/ACC_portfolio.pdf" class="learn-more">Learn More</a>
+            </div>
+        </div>
+
+        <div class="project reverse">
+            <div class="project-image">
+                <img src="https://placehold.co/600x400" alt="">
+            </div>
+            <div class="project-info">
+                <h3>Field Oriented Control of PMSM using RL & ANN</h3>
+                <p>Improved the response of FOC in a PMSM by using Reinforcement Learning.</p>
+                <p class="publication">Publication: IEEE</p>
+                <a href="reports/FOC_portfolio.pdf" class="learn-more">Learn More</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-image">
+                <img src="https://placehold.co/600x400" alt="">
+            </div>
+            <div class="project-info">
+                <h3>A unique Passive Balancing method for Li-ion battery</h3>
+                <p>An algorithm to reduce heat dissipation during battery balancing by 30%.</p>
+                <a href="reports/UAV_Report.pdf" class="learn-more">Learn More</a>
+            </div>
+        </div>
+
+        <div class="project reverse">
+            <div class="project-image">
+                <img src="https://placehold.co/600x400" alt="">
+            </div>
+            <div class="project-info">
+                <h3>Fast charging optimization for a full-size Li-ion battery pack</h3>
+                <p>Created a digital twin of the battery pack and evaluated charging algorithms.</p>
+                <a href="reports/Parking_Report.pdf" class="learn-more">Learn More</a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 <section id="about">
     <div class="about-container">
@@ -335,34 +361,6 @@
             <a href="reports/CV_Bhavan_Chithambaram.pdf" target="_blank">
                 Curriculum Vitae
             </a>
-        </div>
-    </div>
-</section>
-
-<section id="projects">
-    <div class="project-container">
-        <h2>Past Projects</h2>
-
-        <div class="project">
-            <div class="project-image">
-                <img src="https://placehold.co/600x400">
-            </div>
-            <div class="project-info">
-                <h3>Adaptive Cruise Control with Sensor Fusion</h3>
-                <p>Modelled, tested and validated the control system in a virtual environment.</p>
-                <a href="reports/ACC_portfolio.pdf" class="learn-more">Learn More</a>
-            </div>
-        </div>
-
-        <div class="project reverse">
-            <div class="project-image">
-                <img src="https://placehold.co/600x400">
-            </div>
-            <div class="project-info">
-                <h3>FOC of PMSM using RL & ANN</h3>
-                <p>Improved dynamic response of PMSM using Reinforcement Learning.</p>
-                <a href="reports/FOC_portfolio.pdf" class="learn-more">Learn More</a>
-            </div>
         </div>
     </div>
 </section>
