@@ -144,9 +144,13 @@
         
         .project-image img {
             width: 100% !important;
-            height: auto; /* Maintains the aspect ratio of your simulation results */
+            aspect-ratio: 2 / 1;   /* width 2x height → 800x400 style */
+            object-fit: cover;     /* crops if image is different shape */
             border-radius: 8px;
-            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            /*height: auto; /* Maintains the aspect ratio of your simulation results
+            border-radius: 8px;
+            display: block;*/
         }
 
         .project-container {
@@ -671,6 +675,7 @@
 
 </body>
 </html>
+
 
 
 
