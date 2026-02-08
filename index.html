@@ -134,17 +134,19 @@
         }
         /* FIX uneven project image sizes */
         .project-image {
-            flex: 1;              /* controls image width */
+            flex: 1.5 !important; /* This makes the image wider than the text block */
+            width: 100%;              
         }
 
         .project-info {
-            flex: 1;              /* controls text width */
+            flex: 1 !important;              /* controls text width */
         }
         
         .project-image img {
-            width: 100%;
-            aspect-ratio: 3 / 2;  /* forces same visual height */
-            object-fit: cover;
+            width: 100% !important;
+            height: auto; /* Maintains the aspect ratio of your simulation results */
+            border-radius: 8px;
+            display: block;
         }
 
         .project-container {
@@ -669,6 +671,7 @@
 
 </body>
 </html>
+
 
 
 
