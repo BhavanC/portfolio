@@ -132,6 +132,20 @@
             background: white;
             padding: 5rem 1.5rem;
         }
+        /* FIX uneven project image sizes */
+        .project-image {
+            flex: 1;              /* controls image width */
+        }
+
+        .project-info {
+            flex: 1;              /* controls text width */
+        }
+        
+        .project-image img {
+            width: 100%;
+            aspect-ratio: 3 / 2;  /* forces same visual height */
+            object-fit: cover;
+        }
 
         .project-container {
             max-width: 1200px;
@@ -150,6 +164,14 @@
             flex-direction: column;
             gap: 2rem;
             border-bottom: 1px solid #eee;
+        }
+        /* 👇 ADD HERE */
+        .project-image { flex: 1; }
+        .project-info { flex: 1; }
+        .project-image img {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
         }
 
         @media (min-width: 1024px) {
@@ -563,4 +585,5 @@
 
 </body>
 </html>
+
 
