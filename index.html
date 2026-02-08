@@ -233,6 +233,37 @@
 
         /* ABOUT SECTION */
         #about {
+            position: relative; /* This acts as a 'container' for the absolute image */
+            padding: 6rem 1.5rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Prevents the image from sticking out of the section */
+        }
+        
+        .background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* This makes the image cover the area without stretching */
+            object-fit: cover; 
+            /* Puts the image behind the text */
+            z-index: -1; 
+            /* Optional: fade the image so text is easy to read */
+            opacity: 0.4; 
+        }
+        
+        .about-container {
+            position: relative;
+            z-index: 1; /* Ensures text stays in front of the image */
+            text-align: center;
+            max-width: 800px;
+            color: #333; /* Dark text for a light faded background */
+        }
+        /*#about {
             background: white;
             padding: 6rem 1.5rem;
         }
@@ -240,7 +271,7 @@
         .about-container {
             max-width: 900px;
             margin: 0 auto;
-        }
+        }*/
 
         .about-card {
             background: white;
@@ -561,6 +592,9 @@
 </section>
 
 <section id="about">
+    <img src="https://github.com/BhavanC/portfolio/main/abt me background.jpg" 
+         alt="Background Workspace" 
+         class="background-img">
     <div class="about-container">
         <div class="about-card">
             <h2>About Me</h2>
@@ -637,6 +671,7 @@
 
 </body>
 </html>
+
 
 
 
