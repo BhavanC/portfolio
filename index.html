@@ -4,66 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Control Systems Engineer</title>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        /* 1. RESET & BASE STYLES */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
-            width: 100%;
+            background: #fff;
             overflow-x: hidden;
-            background-color: #fff;
         }
 
-        /* 2. FIXED BACKGROUND SYSTEM */
+        /* FIXED BACKGROUND */
         .background-wrapper {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
+            inset: 0;
             z-index: -1;
         }
 
         .background {
-            position: absolute;
             width: 100%;
             height: 100%;
             background-image: url('https://i.ibb.co/cKDvkkzg/Gemini-Generated-Image-tqgr85tqgr85tqgr.png');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
         }
 
         .overlay {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            inset: 0;
+            background: rgba(0,0,0,0.5);
         }
 
-        /* 3. HERO SECTION */
+        /* HERO */
         .hero-section {
             height: 100vh;
+            color: white;
             display: flex;
             flex-direction: column;
-            color: white;
         }
 
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .profile-avatar {
@@ -71,8 +65,7 @@
             height: 56px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255,255,255,0.2);
         }
 
         .profile-avatar img {
@@ -83,28 +76,24 @@
 
         nav {
             display: flex;
-            align-items: center;
             gap: 2rem;
+            align-items: center;
         }
 
         nav a {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255,255,255,0.9);
             text-decoration: none;
-            font-size: 1rem;
             font-weight: 500;
-            transition: color 0.3s;
         }
 
-        nav a:hover { color: white; }
-
-        .linkedin-icon { width: 20px; height: 20px; }
+        nav a:hover { color: #fff; }
 
         main {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem 3rem;
+            padding: 3rem;
             text-align: center;
         }
 
@@ -112,16 +101,14 @@
             font-size: 3.5rem;
             font-weight: 300;
             line-height: 1.2;
-            letter-spacing: 0.02em;
         }
 
         .hero p {
-            margin: 3rem auto 0;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.125rem;
             max-width: 700px;
-            line-height: 1.7;
+            margin: 3rem auto 0;
+            color: rgba(255,255,255,0.8);
             font-weight: 300;
+            line-height: 1.7;
         }
 
         .cta-button {
@@ -129,29 +116,29 @@
             align-items: center;
             gap: 0.5rem;
             margin-top: 3rem;
-            padding: 0.875rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.9rem 2.2rem;
             border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
             color: white;
-            font-weight: 500;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
 
-        .cta-button:hover { background: rgba(255, 255, 255, 0.2); }
+        .cta-button:hover {
+            background: rgba(255,255,255,0.2);
+        }
 
         .scroll-indicator {
-            padding-bottom: 2rem;
             display: flex;
             justify-content: center;
+            padding-bottom: 2rem;
         }
 
         .scroll-indicator div {
             width: 24px;
             height: 40px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255,255,255,0.3);
             border-radius: 50px;
             display: flex;
             justify-content: center;
@@ -161,21 +148,71 @@
         .scroll-indicator span {
             width: 6px;
             height: 6px;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255,255,255,0.6);
             border-radius: 50%;
             animation: scroll 1.5s infinite;
         }
 
         @keyframes scroll {
-            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(8px); }
         }
 
-        /* 4. PROJECTS SECTION */
+        /* ABOUT */
+        #about {
+            background: white;
+            padding: 6rem 1.5rem;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-card {
+            background: white;
+            padding: 4rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+
+        .about-card h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-card p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #4a4a4a;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .about-card a {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .about-card a:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* PROJECTS */
         #projects {
             background: white;
-            position: relative;
-            z-index: 10;
             padding: 5rem 1.5rem;
         }
 
@@ -191,144 +228,144 @@
         }
 
         .project {
+            padding: 4rem 0;
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            padding: 4rem 0;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #eee;
         }
 
         @media (min-width: 1024px) {
-            .project { flex-direction: row; gap: 4rem; align-items: center; }
+            .project {
+                flex-direction: row;
+                align-items: center;
+                gap: 4rem;
+            }
+
             .project.reverse { flex-direction: row-reverse; }
         }
 
-        .project-image { flex: 1; }
         .project-image img {
             width: 100%;
-            height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .project-info { flex: 1; }
-        .project-info h3 { font-size: 1.75rem; margin-bottom: 1rem; }
-        .project-info p { color: #666; margin-bottom: 1rem; line-height: 1.7; }
-        .project-info .publication { font-style: italic; color: #888; font-size: 0.9rem; }
+        .project-info h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            color: #666;
+            line-height: 1.7;
+        }
 
         .learn-more {
             display: inline-block;
             margin-top: 1.5rem;
             padding: 0.75rem 2rem;
-            border: 1px solid #1a1a1a;
             border-radius: 50px;
-            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
+            color: #1a1a1a;
+            transition: 0.3s;
         }
 
-        .learn-more:hover { background: #1a1a1a; color: #fff; }
+        .learn-more:hover {
+            background: #1a1a1a;
+            color: white;
+        }
 
-        /* RESPONSIVE MOBILE */
         @media (max-width: 768px) {
-            header { padding: 1rem 1.5rem; }
             .hero h1 { font-size: 2.2rem; }
-            .project-container h2 { font-size: 2rem; }
+            .about-card { padding: 3rem 2rem; }
+            .about-card h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="background-wrapper">
-        <div class="background"></div>
-        <div class="overlay"></div>
+<div class="background-wrapper">
+    <div class="background"></div>
+    <div class="overlay"></div>
+</div>
+
+<div class="hero-section">
+    <header>
+        <div class="profile-avatar">
+            <img src="Screenshot 2024-02-08 220324.png" alt="Profile">
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="https://www.linkedin.com/in/bhavan-chithambaram-5747651ab" target="_blank">LinkedIn</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Control Systems Engineer specialised in<br>Digital Twin & MiL</h1>
+            <p>
+                Master's student with expertise in Model-Based Design and Systems Engineering,
+                developing and validating control algorithms and performing virtual simulations.
+            </p>
+            <a href="#projects" class="cta-button">
+                View My Work ↓
+            </a>
+        </div>
+    </main>
+
+    <div class="scroll-indicator">
+        <div><span></span></div>
     </div>
+</div>
 
-    <div class="hero-section">
-        <header>
-            <div class="profile-avatar">
-                <img src="Screenshot 2024-02-08 220324.png" alt="Profile Picture">
-            </div>
-            <nav>
-                <a href="https://www.linkedin.com/in/bhavan-chithambaram-5747651ab" target="_blank">
-                    <svg class="linkedin-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-            </nav>
-        </header>
-
-        <main>
-            <div class="hero">
-                <h1>Control Systems Engineer specialised in<br>Digital Twin & MiL</h1>
-                <p>Master's student with expertise in Model-Based Design and Systems Engineering, developing and validating control algorithms and performing virtual simulations.</p>
-                <a href="#projects" class="cta-button">
-                    View My Work
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </a>
-            </div>
-        </main>
-
-        <div class="scroll-indicator">
-            <div><span></span></div>
+<section id="about">
+    <div class="about-container">
+        <div class="about-card">
+            <h2>About Me</h2>
+            <p>
+                Engineer with two years of practical experience in the automotive industry,
+                focused on control systems, algorithm development, Model-in-the-Loop testing
+                and validation. Open to opportunities where I can apply my experience while
+                continuing to grow in a challenging engineering environment.
+            </p>
+            <a href="reports/CV_Bhavan_Chithambaram.pdf" target="_blank">
+                Curriculum Vitae
+            </a>
         </div>
     </div>
+</section>
 
-    <section id="projects">
-        <div class="project-container">
-            <h2>Past Projects</h2>
+<section id="projects">
+    <div class="project-container">
+        <h2>Past Projects</h2>
 
-            <div class="project">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400" alt="Adaptive Cruise Control">
-                </div>
-                <div class="project-info">
-                    <h3>Adaptive Cruise Control with Sensor Fusion</h3>
-                    <p>Modelled, tested and validated the control system in a self-created virtual environment with the implementation of sensor fusion, lane detection and object detection.</p>
-                    <p class="publication">Publication: EAI</p>
-                    <a href="reports/ACC_portfolio.pdf" target="_blank" class="learn-more">LEARN MORE</a>
-                </div>
+        <div class="project">
+            <div class="project-image">
+                <img src="https://placehold.co/600x400">
             </div>
-
-            <div class="project reverse">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400" alt="Field Oriented Control">
-                </div>
-                <div class="project-info">
-                    <h3>Field Oriented Control of PMSM using RL & ANN</h3>
-                    <p>Improved the response of FOC in a PMSM by using Reinforcement Learning as a controller. RL was trained with various specifications, like neurons and reward functions.</p>
-                    <p class="publication">Publication: IEEE</p>
-                    <a href="reports/FOC_portfolio.pdf" target="_blank" class="learn-more">LEARN MORE</a>
-                </div>
+            <div class="project-info">
+                <h3>Adaptive Cruise Control with Sensor Fusion</h3>
+                <p>Modelled, tested and validated the control system in a virtual environment.</p>
+                <a href="reports/ACC_portfolio.pdf" class="learn-more">Learn More</a>
             </div>
-
-            <div class="project">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400" alt="UAV Trajectory Tracking">
-                </div>
-                <div class="project-info">
-                    <h3>A unique Passive Balancing method for Li-ion battery</h3>
-                    <p>An algorithm to reduce the heat dissipation of a battery while balancing by 30% without any additional cooling.</p>
-                    <a href="reports/UAV_Report.pdf" target="_blank" class="learn-more">LEARN MORE</a>
-                </div>
-            </div>
-
-            <div class="project reverse">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400" alt="Automated Parking System">
-                </div>
-                <div class="project-info">
-                    <h3>Fast charging optimization for a full-size Li-ion battery pack</h3>
-                    <p>Created a Digital twin of the battery pack with cell chemistry and performed various charging algorithms.</p>
-                    <a href="reports/Parking_Report.pdf" target="_blank" class="learn-more">LEARN MORE</a>
-                </div>
-            </div>
-
         </div>
-    </section>
+
+        <div class="project reverse">
+            <div class="project-image">
+                <img src="https://placehold.co/600x400">
+            </div>
+            <div class="project-info">
+                <h3>FOC of PMSM using RL & ANN</h3>
+                <p>Improved dynamic response of PMSM using Reinforcement Learning.</p>
+                <a href="reports/FOC_portfolio.pdf" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
-
 </html>
-
-
-
