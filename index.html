@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Control Systems Engineer</title>
+    <title>Portfolio - Bhavan Chithambaram</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
+        /* GLOBAL STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -43,7 +44,7 @@
             background: rgba(0,0,0,0.5);
         }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero-section {
             height: 100vh;
             color: white;
@@ -82,11 +83,12 @@
             color: rgba(255,255,255,0.9);
             text-decoration: none;
             font-weight: 500;
+            transition: 0.3s;
         }
 
         nav a:hover { color: #fff; }
 
-        main {
+        main.hero-main {
             flex: 1;
             display: flex;
             align-items: center;
@@ -123,11 +125,9 @@
             transition: 0.3s;
         }
 
-        .cta-button:hover {
-            background: rgba(255,255,255,0.2);
-        }
+        .cta-button:hover { background: rgba(255,255,255,0.2); }
 
-        /* PROJECTS */
+        /* PROJECTS SECTION */
         #projects {
             background: white;
             padding: 5rem 1.5rem;
@@ -158,10 +158,7 @@
                 align-items: center;
                 gap: 4rem;
             }
-
-            .project.reverse {
-                flex-direction: row-reverse;
-            }
+            .project.reverse { flex-direction: row-reverse; }
         }
 
         .project-image img {
@@ -203,7 +200,7 @@
             color: white;
         }
 
-        /* ABOUT */
+        /* ABOUT SECTION */
         #about {
             background: white;
             padding: 6rem 1.5rem;
@@ -212,8 +209,6 @@
         .about-container {
             max-width: 900px;
             margin: 0 auto;
-            display: flex;
-            justify-content: center;
         }
 
         .about-card {
@@ -256,10 +251,157 @@
             transform: translateY(-2px);
         }
 
+        /* CONTACT SECTION */
+        #contact {
+            background: white;
+            padding-top: 80px;
+        }
+
+        .top-bar {
+            height: 4px;
+            background: linear-gradient(to right, 
+                #333 0%, #333 10%, #ddd 10%, #ddd 20%,
+                #333 20%, #333 30%, #ddd 30%, #ddd 40%,
+                #333 40%, #333 50%, #ddd 50%, #ddd 60%,
+                #333 60%, #333 70%, #ddd 70%, #ddd 80%,
+                #333 80%, #333 90%, #ddd 90%, #ddd 100%
+            );
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .left-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        .left-section p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            max-width: 400px;
+        }
+
+        .form-group { margin-bottom: 25px; }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .name-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .sub-label {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+        }
+
+        textarea { min-height: 120px; resize: vertical; }
+
+        .send-button {
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover { background: #333; }
+
+        /* FOOTER */
+        .footer {
+            border-top: 1px solid #eee;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            background: white;
+        }
+
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .footer-right { text-align: right; }
+
+        .footer-email {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .linkedin-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            color: #1a1a1a;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
+            header { padding: 1.5rem; }
             .hero h1 { font-size: 2.2rem; }
             .about-card { padding: 3rem 2rem; }
             .about-card h2 { font-size: 2.2rem; }
+            .contact-content {
+                grid-template-columns: 1fr;
+                padding: 40px 30px;
+                gap: 40px;
+            }
+            .left-section h1 { font-size: 2.5rem; }
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 30px;
+            }
+            .footer-right { text-align: center; }
         }
     </style>
 </head>
@@ -279,11 +421,12 @@
         <nav>
             <a href="#projects">Projects</a>
             <a href="#about">About</a>
+            <a href="#contact">Contact</a>
             <a href="https://www.linkedin.com/in/bhavan-chithambaram-5747651ab" target="_blank">LinkedIn</a>
         </nav>
     </header>
 
-    <main>
+    <main class="hero-main">
         <div class="hero">
             <h1>Control Systems Engineer specialised in<br>Digital Twin & MiL</h1>
             <p>
@@ -301,7 +444,7 @@
 
         <div class="project">
             <div class="project-image">
-                <img src="https://placehold.co/600x400" alt="">
+                <img src="https://placehold.co/600x400" alt="ACC Project">
             </div>
             <div class="project-info">
                 <h3>Adaptive Cruise Control with Sensor Fusion</h3>
@@ -313,7 +456,7 @@
 
         <div class="project reverse">
             <div class="project-image">
-                <img src="https://placehold.co/600x400" alt="">
+                <img src="https://placehold.co/600x400" alt="FOC Project">
             </div>
             <div class="project-info">
                 <h3>Field Oriented Control of PMSM using RL & ANN</h3>
@@ -325,7 +468,7 @@
 
         <div class="project">
             <div class="project-image">
-                <img src="https://placehold.co/600x400" alt="">
+                <img src="https://placehold.co/600x400" alt="Battery Balancing">
             </div>
             <div class="project-info">
                 <h3>A unique Passive Balancing method for Li-ion battery</h3>
@@ -336,7 +479,7 @@
 
         <div class="project reverse">
             <div class="project-image">
-                <img src="https://placehold.co/600x400" alt="">
+                <img src="https://placehold.co/600x400" alt="Fast Charging">
             </div>
             <div class="project-info">
                 <h3>Fast charging optimization for a full-size Li-ion battery pack</h3>
@@ -344,7 +487,6 @@
                 <a href="reports/Parking_Report.pdf" class="learn-more">Learn More</a>
             </div>
         </div>
-
     </div>
 </section>
 
@@ -358,36 +500,65 @@
                 and validation. Open to opportunities where I can apply my experience while
                 continuing to grow in a challenging engineering environment.
             </p>
-            <a href="reports/CV_Bhavan_Chithambaram.pdf" target="_blank">
-                Curriculum Vitae
-            </a>
+            <a href="reports/CV_Bhavan_Chithambaram.pdf" target="_blank">Curriculum Vitae</a>
         </div>
     </div>
 </section>
 
-    <!-- CONTACT -->
 <section id="contact">
-<div class="top-bar"></div>
-<div class="contact-content">
-    <div class="contact-left">
-        <h1>Contact me</h1>
-        <p>Interested in working together? Fill out the form, and I’ll get back to you.</p>
+    <div class="top-bar"></div>
+    <div class="contact-content">
+        <div class="left-section">
+            <h1>Contact me</h1>
+            <p>Interested in working together? Fill out some info, and we will be in touch shortly.</p>
+        </div>
+        
+        <div class="right-section">
+            <form action="https://formsubmit.co/bhavanchithambaram@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Portfolio Message!">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <div class="name-row">
+                        <div>
+                            <span class="sub-label">First Name <span style="color: #888;">(required)</span></span>
+                            <input type="text" name="First_Name" required>
+                        </div>
+                        <div>
+                            <span class="sub-label">Last Name <span style="color: #888;">(required)</span></span>
+                            <input type="text" name="Last_Name" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email <span>(required)</span></label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Message <span>(required)</span></label>
+                    <textarea name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="send-button">Send</button>
+            </form>
+        </div>
     </div>
-    <form>
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button class="send-button">Send</button>
-    </form>
-</div>
 </section>
 
-<footer>
+<footer class="footer">
     <div class="footer-name">Bhavan Chithambaram</div>
-    <div>bhavanchithambaram@gmail.com</div>
+    <div class="footer-right">
+        <div class="footer-email">bhavanchithambaram@gmail.com</div>
+        <a href="https://www.linkedin.com/in/bhavan-chithambaram-5747651ab" target="_blank">
+            <svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+    </div>
 </footer>
-    
+
 </body>
 </html>
-
